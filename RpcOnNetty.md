@@ -1,6 +1,6 @@
 ## RpcOnNetty(Ron)
-**RPC**( *Remote Procedure Call, 远程过程调用*  ) 一种远程通信机制. 旨在 **像调用本地方法一样调用远程方法** 来实现通信. 一个好的RPC工具基本要求就是: 
-
+**RPC**( *Remote Procedure Call, 远程过程调用*  ) 一种旨在 **像调用本地方法一样调用远程方法** 来实现通信的方法.
+一个好的RPC工具基本要求就是: 
 1. 贴近软件开发平台的方法调用机制, 无需用户额外工作, 面向用户(问题)的接口设计
 2. 封装底层通信细节, 面向机器的实现 
 
@@ -15,25 +15,25 @@
 ​	server端核心代码如下:
 
 ```java
-		Ron.getServer().classScan("com.infinite.test").port(8080).serve();
+	Ron.getServer().classScan("com.infinite.test").port(8080).serve();
 ```
 ``` java
-		package com.infinite.test.svc;
-		...
-            
-		public interface TestService {
-			public void test();
-		}
+    package com.infinite.test.svc;
+    ...
 
-		....
-         @Service
-         public class TestServiceImpl implements TestService {...}
+    public interface TestService {
+    public void test();
+    }
+
+    ....
+    @Service
+    public class TestServiceImpl implements TestService {...}
 ```
 
 ​	client端核心代码如下:
 
 ``` java
-		TestService testSvc = Ron.getClient(TestService.class)
+	TestService testSvc = Ron.getClient(TestService.class)
 ```
 
 #### 1.2 实现设计
@@ -46,8 +46,7 @@
 
 ​	传输层通信采用TCP协议, netty
 
-![](E:\nettyNote\images\RON.PNG)
+![](./images/RON.PNG)
 
 ### 2.实现
-
 ​	详见源码目录[RON]()
