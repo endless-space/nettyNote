@@ -15,7 +15,7 @@
 ​	server端核心代码如下:
 
 ```java
-	Ron.getServer().classScan("com.infinite.test").port(8080).serve();
+    Ron.getServer().classScan("com.infinite.test").port(8080).serve();
 ```
 ``` java
     package com.infinite.test.svc;
